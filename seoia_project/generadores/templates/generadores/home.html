@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SEOIA</title>
+    <link rel="stylesheet" href="{% static 'generadores/style.css' %}">
+</head>
+<body>
+<body>
+    <header>
+        <h1>SEOIA</h1>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Generador de metadatos SEO</h2>
+            <p>Genera metadatos optimizados para SEO de manera automática.</p>
+            <a href="{% url 'generador_metadata' %}">Generar</a>
+        </section>
+        <section class="card">
+            <h2>Generador de artículos de blog</h2>
+            <p>Genera contenido para blogs con temas relevantes para SEO.</p>
+            <a href="{% url 'generador_articulos' %}">Generar</a>
+        </section>
+        <section class="card">
+            <h2>Generador de datos estructurados</h2>
+            <p>Genera datos estructurados para mejorar la visibilidad en buscadores.</p>
+            <a href="{% url 'generador_datos' %}">Generar</a>
+        </section>
+    </main>
+</body>
+</html>
