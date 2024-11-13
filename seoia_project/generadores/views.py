@@ -41,3 +41,14 @@ def generador_articulos(request):
 
 def generador_datos(request):
     return render(request, 'generadores/generador_datos.html')
+
+from django.shortcuts import render
+
+def generador_ficha_producto(request):
+    return render(request, 'generadores/generador_ficha_producto.html')
+
+def auditoria_tecnica(request):
+    return render(request, 'generadores/auditoria_tecnica.html')
+
+def topic_research(request):
+    return render(request, 'generadores/topic_research.html')

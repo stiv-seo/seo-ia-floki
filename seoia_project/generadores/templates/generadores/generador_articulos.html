@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Artículos</title>
+    <link rel="stylesheet" href="{% static 'generadores/style.css' %}">
+</head>
+<body>
+    <div class="generador-articulos">
+        <div class="contenedor">
+            <h1>Generador de Artículos</h1>
+            <form action="{% url 'generador_articulos' %}" method="post">
+                {% csrf_token %}
+                
+                <div class="campo-formulario">
+                    <label for="article_title">Título del artículo o H1</label>
+                    <input type="text" id="article_title" name="article_title" required 
+                           placeholder="Escribe el título principal de tu artículo...">
+                </div>
+
+                <div class="campo-formulario campo-destacado">
+                    <label for="focus_keyword">Focus Keyword o palabra clave de enfoque</label>
+                    <input type="text" id="focus_keyword" name="focus_keyword" required
+                           placeholder="Palabra clave principal...">
+                </div>
+
+                <div class="campo-formulario campo-destacado">
+                    <label for="lsi_keywords">Otras palabras clave (LSI)</label>
+                    <textarea id="lsi_keywords" name="lsi_keywords" 
+                              placeholder="Ingresa palabras clave relacionadas, separadas por comas..."></textarea>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="funnel_stage">Etapa del funnel</label>
+                    <select id="funnel_stage" name="funnel_stage" required>
+                        <option value="" disabled selected>Selecciona una etapa...</option>
+                        <option value="atraccion">Atracción</option>
+                        <option value="interes">Interés</option>
+                        <option value="consideracion">Consideración</option>
+                        <option value="intencion">Intención</option>
+                        <option value="conversion">Conversión</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="target_audience">Público objetivo</label>
+                    <textarea id="target_audience" name="target_audience" required
+                              placeholder="Describe tu audiencia objetivo..."></textarea>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="tone_voice">Tono y voz</label>
+                    <textarea id="tone_voice" name="tone_voice" required
+                              placeholder="Define el tono y estilo de escritura..."></textarea>
+                </div>
+
+                <button type="submit">Generar Artículo</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

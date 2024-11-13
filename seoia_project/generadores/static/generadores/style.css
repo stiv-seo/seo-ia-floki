@@ -1,3 +1,4 @@
+/* Home */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -10,8 +11,10 @@ header {
 
 main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .card {
@@ -20,11 +23,12 @@ main {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 250px;
+    width: calc(33.33% - 20px);
+    transition: transform 0.3s ease;
 }
 
-.card h2 {
-    color: #333;
+.card:hover {
+    transform: translateY(-10px);
 }
 
 .card a {
@@ -33,9 +37,43 @@ main {
     padding: 10px 15px;
     color: #fff;
     background-color: #6c63ff;
-    text-decoration: none;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
+
+.card a:hover {
+    background-color: #5753d0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Nueva sección para mayor espaciamiento entre filas */
+.card:nth-child(n+4) {
+    margin-top: 20px;
+}
+
+/* Media query para pantallas más pequeñas (opcional) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/* Nueva sección para mayor espaciamiento entre filas */
+.card:nth-child(n+4) {
+    margin-top: 20px;
+}
+
+/* Media query para pantallas más pequeñas (opcional) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
 
 /* Estilos específicos para el generador de metadatos */
 .results-container {
@@ -48,4 +86,171 @@ main {
 /* Solo si no estás usando la clase 'hidden' de Tailwind */
 .hidden {
     display: none;
+}
+
+/* Estilos para el generador de artículos */
+.generador-articulos {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.generador-articulos .contenedor {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.generador-articulos h1 {
+    color: #333333;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+.campo-formulario {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+/* Estilos para campos destacados */
+.campo-destacado {
+    background-color: #f8f4ff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #6b46c1;
+    margin-bottom: 30px;
+}
+
+.generador-articulos label {
+    display: block;
+    color: #2d3748;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.campo-destacado label {
+    color: #553c9a;
+}
+
+/* Estilos mejorados para inputs y textareas */
+.generador-articulos input,
+.generador-articulos textarea,
+.generador-articulos select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    color: #2d3748;
+}
+
+.generador-articulos select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b46c1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.campo-destacado input,
+.campo-destacado textarea {
+    border-color: #d8d1f0;
+    background-color: #ffffff;
+}
+
+.generador-articulos textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Estilos para placeholder */
+.generador-articulos input::placeholder,
+.generador-articulos textarea::placeholder {
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+/* Estados focus */
+.generador-articulos input:focus,
+.generador-articulos textarea:focus,
+.generador-articulos select:focus {
+    outline: none;
+    border-color: #6b46c1;
+    box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.15);
+}
+
+/* Estilos para el select en hover */
+.generador-articulos select:hover {
+    border-color: #6b46c1;
+}
+
+/* Estilos para opciones del select */
+.generador-articulos select option {
+    padding: 12px;
+    font-size: 15px;
+}
+
+.generador-articulos button {
+    width: 100%;
+    padding: 16px;
+    background-color: #6b46c1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    box-shadow: 0 2px 4px rgba(107, 70, 193, 0.2);
+}
+
+.generador-articulos button:hover {
+    background-color: #5a37a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(107, 70, 193, 0.3);
+}
+
+.generador-articulos button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(107, 70, 193, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .generador-articulos .contenedor {
+        padding: 25px;
+    }
+
+    .generador-articulos h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .campo-formulario {
+        margin-bottom: 20px;
+    }
+
+    .campo-destacado {
+        padding: 15px;
+    }
+
+    .generador-articulos input,
+    .generador-articulos textarea,
+    .generador-articulos select {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
 }

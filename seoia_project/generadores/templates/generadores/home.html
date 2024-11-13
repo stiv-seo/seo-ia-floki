@@ -3,13 +3,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>SEOIA</title>
+    <title>FlokIA</title>
     <link rel="stylesheet" href="{% static 'generadores/style.css' %}">
 </head>
 <body>
-<body>
     <header>
-        <h1>SEOIA</h1>
+        <h1>FlokIA</h1>
     </header>
     <main>
         <section class="card">
@@ -27,6 +26,25 @@
             <p>Genera datos estructurados para mejorar la visibilidad en buscadores.</p>
             <a href="{% url 'generador_datos' %}">Generar</a>
         </section>
+        <!-- Nueva Card: Generador de ficha de producto -->
+        <section class="card">
+            <h2>Generador de ficha de producto</h2>
+            <p>Genera fichas de producto optimizadas para comercio electrónico.</p>
+            <a href="{% url 'generador_ficha_producto' %}">Generar</a>
+        </section>
+        <!-- Nueva Card: Auditoría técnica -->
+        <section class="card">
+            <h2>Auditoría técnica</h2>
+            <p>Realiza una auditoría técnica completa para mejorar el SEO.</p>
+            <a href="{% url 'auditoria_tecnica' %}">Auditar</a>
+        </section>
+        <!-- Nueva Card: Topic research -->
+        <section class="card">
+            <h2>Topic research</h2>
+            <p>Investiga temas de interés para crear contenido relevante.</p>
+            <a href="{% url 'topic_research' %}">Investigar</a>
+        </section>
     </main>
 </body>
 </html>
+
